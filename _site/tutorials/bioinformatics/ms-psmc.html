@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Applying PSMC to simulated data</title>
+  <meta name="description" content="Willy Rodriguez github site. Some tutorials related with population genetics.
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://willyrv.github.io/tutorials/bioinformatics/ms-psmc.html">
+  <link rel="alternate" type="application/rss+xml" title="Willy Rodríguez" href="http://willyrv.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <div class="site-title" ><a class="site-title" href="/">Willy Rodríguez</a> </div>
+
+        <div id="nav">
+        <ul>
+            <li><a href="/projects" class="">Projects</a></li>
+            <li><a href="/tutorials" class="current">Tutorials</a></li>
+            <li><a href="/blog" class="">Blog</a></li>
+            <li><a href="/cv" class="">CV</a></li>
+            <li><a href="/about" class="">About me</a></li>
+        </ul>
+    </div>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Applying PSMC to simulated data</h1>
+    <p class="post-meta">Jul 5, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <h1 id="applications-of-psmc-to-ms-simulated-data">Applications of PSMC to MS-simulated data</h1>
+
+<p>This is a simple tutorial showing how to use PSMC to infer the demographic
+history from full DNA sequences. We start by applying PSMC to simulated data.</p>
+
+<p>For simulations we will use the software ms (<em>Hudson, R. R. (2002) Generating samples under a Wright-Fisher neutral model. Bioinformatics 18:337-8</em>). The code may be
+downloaded from <a href="https://webshare.uchicago.edu/xythoswfs/webui/_xy-218240_1-t_DunQ7c99">here</a>.
+You can also download a compiled version <a href="http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/ms">here</a>, or type</p>
+
+<p><code>
+    wget http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/ms
+</code></p>
+
+<p>You need to verify that the file <em>ms</em> has execution permissions. In order to give execution permissions to the file type:</p>
+
+<p>chmod 775 ./ms</p>
+
+<p>Let’s start from one simple simulation. We will generate the first dataset used in the Supplementary Materials of Li and Durbin paper ( <em>Heng Li &amp; Richard Durbin, Inference of human population history from individual whole-genome sequences,  Nature 475, 493–496 (28 July 2011) doi:10.1038/nature102312011</em>).</p>
+
+<p><strong>1-) Run:</strong></p>
+
+<p><code>
+  ./ms 2 100 -t 30000 -r 6000 30000000 -eN 0.01 0.1 -eN 0.06 1 -eN 0.2 0.5 -eN 1 1 -eN 2 2 -p 8  &gt; sim1_results.ms
+</code></p>
+
+<p>Normally this takes less than a minute and should produce one output file (called “sim1_results.ms”). Now we will use a python script to convert this ms output into the input file of psmc. You can download the script <a href="http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/ms2psmcfa.py">here</a>.</p>
+
+<p><code>
+  wget http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/ms2psmcfa.py
+</code></p>
+
+<p>The file must has execution permissions:</p>
+
+<p><code>
+  chmod 775 ./ms2psmcfa.py
+</code></p>
+
+<p><strong>2-) Run:</strong></p>
+
+<p><code>
+  ./ms2psmcfa.py ./sim1_results.ms &gt; sim1.psmcfa
+</code></p>
+
+<p>This creates the file “sim1.psmcfa” wich is the input of psmc. (This step is also fast, less than a minute)</p>
+
+<p>Now we can run the PSMC analysis.
+Download a compiled version of the psmc software from <a href="http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/psmc">here</a> or type:</p>
+
+<p><code>
+  wget http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/psmc
+  chmod 775 ./psmc
+</code></p>
+
+<p>We run the PSMC with the default parameters.</p>
+
+<p><strong>3-) Run:</strong></p>
+
+<p><code>
+  ./psmc -N25 -t15 -r5 -p 4+25*2+4+6 -o dem_history_sim1.psmc ./sim1.psmcfa
+</code></p>
+
+<p>This is a little bit long (about 3 hours). You should have a file like <a href="http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/result_files/dem_history_sim1.psmc">this</a></p>
+
+<p><code>
+  wget http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/result_files/dem_history_sim1.psmc
+</code></p>
+
+<p>Plot the result using the provided perl script:
+Once the psmc analysis is finished, you can plot the results by using one of the scripts provided with the psmc. You can download it from <a href="https://github.com/lh3/psmc/blob/master/utils/psmc_plot.pl">here</a>
+or from <a href="http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/psmc_plot.pl">here</a></p>
+
+<p><code>
+  wget http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/psmc_plot.pl
+</code></p>
+
+<p><strong>4-) Run:</strong></p>
+
+<p><code>
+  ./psmc_plot.pl ./dem_history ./dem_history_sim1.psmc
+</code>`</p>
+
+<p>And you will finally get the inferred demographic history.</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+  </body>
+
+</html>

@@ -1,6 +1,41 @@
 /**
  * Site header
  */
+
+#nav
+{
+text-align: center;
+}
+
+#nav ul {
+margin: 0;
+padding: 0;
+display: inline-block;
+list-style: none;
+}
+
+#nav li {
+display: inline-block;
+font-size: 1em;
+}
+
+#nav li a {
+display: block;
+padding: 15px 25px 10px 25px;
+text-decoration: none;
+color: #555;
+}
+
+#nav li a:hover {
+color: #0a9cb2;
+transition: 0.2s linear;
+}
+
+#nav li a.current {
+color: #3aafc1; /* #587cdc; */
+font-weight: bold;
+}
+
 .site-header {
     border-top: 5px solid $grey-color-dark;
     //border-bottom: 1px solid $grey-color-light;
