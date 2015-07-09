@@ -11,7 +11,7 @@ Applications of PSMC to MS-simulated data
 This is a simple tutorial showing how to use PSMC to infer the demographic
 history from full DNA sequences. We start by applying PSMC to simulated data.
 
-For simulations we will use the software ms (*Hudson, R. R. (2002) Generating samples under a Wright-Fisher neutral model. Bioinformatics 18:337-8*). The code may be
+For simulations we will use the software ms [1]. The code may be
 downloaded from [here](https://webshare.uchicago.edu/xythoswfs/webui/_xy-218240_1-t_DunQ7c99).
 You can also download a compiled version [here](http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/ms), or type
 
@@ -23,14 +23,17 @@ You can also download a compiled version [here](http://wrodrigu.perso.math.cnrs.
 
 You need to verify that the file *ms* has execution permissions. In order to give execution permissions to the file type:
 
+```
   chmod 775 ./ms
+```
 
 Let's start from one simple simulation. We will generate the first dataset used in the Supplementary Materials of Li and Durbin paper ( *Heng Li & Richard Durbin, Inference of human population history from individual whole-genome sequences,  Nature 475, 493–496 (28 July 2011) doi:10.1038/nature102312011*).
 
 **1-) Run:**
 
 ```
-  ./ms 2 100 -t 30000 -r 6000 30000000 -eN 0.01 0.1 -eN 0.06 1 -eN 0.2 0.5 -eN 1 1 -eN 2 2 -p 8  > sim1_results.ms
+./ms 2 100 -t 30000 -r 6000 30000000 -eN 0.01 0.1 -eN 0.06 1 -eN  0.2 0.5 \
+-eN 1 1 -eN 2 2 -p 8  > sim1_results.ms
 ```
 
 Normally this takes less than a minute and should produce one output file (called “sim1_results.ms”). Now we will use a python script to convert this ms output into the input file of psmc. You can download the script [here](http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/ms2psmcfa.py).
@@ -86,7 +89,7 @@ or from [here](http://wrodrigu.perso.math.cnrs.fr/GTPB/tutorial_psmc/psmc_plot.p
 **4-) Run:**
 
 ```
-  ./psmc_plot.pl ./dem_history ./dem_history_sim1.psmc
+  ./plot_results.py
 ````
 
 And you will finally get the inferred demographic history.
