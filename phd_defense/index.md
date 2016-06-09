@@ -76,13 +76,11 @@ function showStuff(id) {
 }
 .popup {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
-    background: #fff;
-    width: 700px;
-    height: 400px;
-    margin-left: -250px; /*Half the value of width to center div*/
+    background: #D3EFED;
+    margin-left: -400px; /*Half the value of width to center div*/
     margin-top: -250px; /*Half the value of height to center div*/
     z-index: 200;
 }
@@ -93,10 +91,13 @@ function showStuff(id) {
 }
 .popupcontent {
     padding: 10px;
+    width: 700px;
+    height: 400px;
+    overflow-y: auto;
 }
 .popupcontrols{
     height: 30px;
-    background: #BDE7F5;
+    background: #8BBCCF;
 }
 #button {
     cursor: pointer;
@@ -175,8 +176,10 @@ function showStuff(id) {
         <span id="popupcloseWilly" onclick="hidePopup('popupWilly', 'popupcloseWilly'); return false;" class="popupclose">x</span>
     </div>
     <div class="popupcontent">
-        The rapid development of DNA sequencing technologies is expanding the horizons of population genetic studies. It is expected that genomic data will increase our ability to reconstruct the history of populations. While this increase in genetic information will likely help biologists and anthropologists to reconstruct the demographic history of populations, it also poses big challenges. In some cases, simplicity of the model may lead to erroneous conclusions about the population under study. Recent works have shown that DNA patterns expected in individuals coming from structured populations correspond with those of unstructured populations with changes in size through time. As a consequence it is often difficult to determine whether demographic events such as expansions or contractions (bottlenecks) inferred from genetic data are real or due to the fact that populations are structured in nature. Moreover, almost no inferential method allowing to reconstruct past demographic size changes takes into account structure effects. 
-In this thesis, some recent results in population genetics are presented: (i) a model choice procedure is proposed to distinguish one simple scenario of population size change from one of structured population, based on the coalescence times of two genes, showing that for these simple cases, it is possible to distinguish both models using genetic information form one single individual; (ii) by using the notion of instantaneous coalescent rate, it is demonstrated that for any scenario of structured population or any other one, regardless how complex it could be, there always exists a panmitic scenario with a precise function of population size changes having exactly the same distribution for the coalescence times of two genes. This not only explains why spurious signals of bottlenecks can be found in structured populations but also predicts the demographic history that actual inference methods are likely to reconstruct when applied to non panmitic populations. Finally, (iii) a method based on a Markov process is developed for inferring past demographic events taking the structure into account. This is method uses the distribution of coalescence times of two genes to detect past demographic changes in structured populations from the DNA of one single individual. Some applications of the model to genomic data are discussed.
+    <p>
+        The rapid development of DNA sequencing technologies is expanding the horizons of population genetic studies. It is expected that genomic data will increase our ability to reconstruct the history of populations. While this increase in genetic information will likely help biologists and anthropologists to reconstruct the demographic history of populations, it also poses big challenges. In some cases, simplicity of the model may lead to erroneous conclusions about the population under study. Recent works have shown that DNA patterns expected in individuals coming from structured populations correspond with those of unstructured populations with changes in size through time. As a consequence it is often difficult to determine whether demographic events such as expansions or contractions (bottlenecks) inferred from genetic data are real or due to the fact that populations are structured in nature. Moreover, almost no inferential method allowing to reconstruct past demographic size changes takes into account structure effects. </p>
+        
+	<p>In this thesis, some recent results in population genetics are presented: (i) a model choice procedure is proposed to distinguish one simple scenario of population size change from one of structured population, based on the coalescence times of two genes, showing that for these simple cases, it is possible to distinguish both models using genetic information form one single individual; (ii) by using the notion of instantaneous coalescent rate, it is demonstrated that for any scenario of structured population or any other one, regardless how complex it could be, there always exists a panmitic scenario with a precise function of population size changes having exactly the same distribution for the coalescence times of two genes. This not only explains why spurious signals of bottlenecks can be found in structured populations but also predicts the demographic history that actual inference methods are likely to reconstruct when applied to non panmitic populations. Finally, (iii) a method based on a Markov process is developed for inferring past demographic events taking the structure into account. This is method uses the distribution of coalescence times of two genes to detect past demographic changes in structured populations from the DNA of one single individual. Some applications of the model to genomic data are discussed.</p>
     </div>
     </div>
      </td>
