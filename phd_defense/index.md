@@ -117,11 +117,11 @@ function showStuff(id) {
    <tbody>
       <tr class="tablerow">
          <td class="timedetails">08:30 - 09:00</td>
-         <td>COFFEE WELCOME</td>
+         <td>WELCOME COFFEE</td>
       </tr>
       <tr class="tablerow">
          <td class="timedetails">09:00 - 09:45</td>
-         <td>TALK 1 - <u>Rasmus Heller</u>. <i>Should we do genotyping by sequencing?</i>.  <br> <span onclick="showPopup('popupRasmus', 'popupcloseRasmus'); return false;" style="cursor: pointer;">(view abstract)</span>
+         <td>TALK 1 - <u>Rasmus Heller</u>. <i>Should we do genotyping by sequencing?</i>  <br> <span onclick="showPopup('popupRasmus', 'popupcloseRasmus'); return false;" style="cursor: pointer;">(view abstract)</span>
          <div id="popupRasmus" class="popup">
     <div class="popupcontrols">
         <span id="popupcloseRasmus" onclick="hidePopup('popupRasmus', 'popupcloseRasmus'); return false;" class="popupclose">x</span>
@@ -152,7 +152,7 @@ function showStuff(id) {
       </tr>
       <tr class="tablerow">
          <td class="timedetails">11:00 - 11:45</td>
-         <td>TALK 3 - <u>Mark Beaumont</u>. <i>Expectation Propagation for demographic inference using genome data</i>. <span onclick="showPopup('popupBeaumont', 'popupcloseBeaumont'); return false;" style="cursor: pointer;">(view abstract)</span>
+         <td>TALK 3 - <u>Mark Beaumont</u>. <i>Expectation Propagation for demographic inference using genome data</i>. <span onclick="showPopup1('popupBeaumont', 'popupcloseBeaumont'); return false;" style="cursor: pointer;">(view abstract)</span>
          <div id="popupBeaumont" class="popup">
     <div class="popupcontrols">
         <span id="popupcloseBeaumont" onclick="hidePopup('popupBeaumont', 'popupcloseBeaumont'); return false;" class="popupclose">x</span>
@@ -169,7 +169,7 @@ function showStuff(id) {
          </td>
       </tr>
       <tr class="tablerow">
-         <td class="timedetails">14:00 - 16:00</td>
+         <td class="timedetails">14:00 </td>
          <td>PhD DEFENSE - <u>Willy Rodriguez</u>. <i>Reconstructing the demographic history of populations from genomic data</i>. <span onclick="showPopup('popupWilly', 'popupcloseWilly'); return false;" style="cursor: pointer;">(view abstract)</span>
          <div id="popupWilly" class="popup">
     <div class="popupcontrols">
@@ -185,8 +185,8 @@ function showStuff(id) {
      </td>
       </tr>
       <tr class="tablerow">
-         <td class="timedetails">17:00 - 18:00</td>
-         <td>POT DE THESE
+         <td class="timedetails"></td>
+         <td>BUFFET AND DRINKS (POT DE THESE)
          </td>
       </tr>
    </tbody>
@@ -203,7 +203,7 @@ function showStuff(id) {
    </thead>
    <tbody>
    <tr class="tablerow">
-         <td colspan="2"> For comming to the INSA, take the subway (line B) and get off at the station "Faculté de Pharmacie". See the map <a href="https://drive.google.com/open?id=1DH6ifyOpMuI8xShMtyhKg2Zh210&usp=sharing">here</a>.
+         <td colspan="2"> To come to the INSA, take the subway (line B) in direction to "Ramonville" and get off at the station "Faculté de Pharmacie". See the map <a href="https://drive.google.com/open?id=1DH6ifyOpMuI8xShMtyhKg2Zh210&usp=sharing">here</a>.
          </td>
       </tr>
    </tbody>
