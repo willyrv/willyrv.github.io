@@ -203,7 +203,7 @@ function showStuff(id) {
    </thead>
    <tbody>
    <tr class="tablerow">
-         <td colspan="2"> To come to the INSA, take the subway (line B) in direction to "Ramonville" and get off at the station "Faculté de Pharmacie". See the map <a href="https://drive.google.com/open?id=1DH6ifyOpMuI8xShMtyhKg2Zh210&usp=sharing">here</a>.
+         <td colspan="2"> To come to the INSA, take the subway (line B) in direction to "Ramonville" and get off at the station "Faculté de Pharmacie". The talks in the morning will take place in the GMM ("Génie Mathématique et Modélisation") building, room 139 (first floor). The PhD defense in the afternoon will take place in "Amphithéâtre Joseph Fourier". See the map <a href="https://drive.google.com/open?id=1DH6ifyOpMuI8xShMtyhKg2Zh210&usp=sharing">here</a>.
          </td>
       </tr>
    </tbody>
