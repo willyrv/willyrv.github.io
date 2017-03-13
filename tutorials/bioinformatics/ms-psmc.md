@@ -11,7 +11,7 @@ This is a simple tutorial showing how to use PSMC to infer the population size h
 
 We need:
 
-* The [ms](https://webshare.uchicago.edu/xythoswfs/webui/_xy-218240_1-t_DunQ7c99) software.
+* The [ms](http://home.uchicago.edu/rhudson1/source/mksamples.html) software.
 * The [PSMC](https://github.com/lh3/psmc) software.
 * Two python [scripts](https://github.com/willyrv/ms-PSMC) (one for converting files and the other one for plotting the results)
 
@@ -20,7 +20,7 @@ Downloading and compiling softwares
 
 **Download and compile ms**
 
-- Go to [https://webshare.uchicago.edu/xythoswfs/webui/_xy-218240_1-t_DunQ7c99](https://webshare.uchicago.edu/xythoswfs/webui/_xy-218240_1-t_DunQ7c99) and download the file ms.tar.gz
+- Go to [http://home.uchicago.edu/rhudson1/source/mksamples.html](http://home.uchicago.edu/rhudson1/source/mksamples.html) and download the file ms.tar.gz
 - Uncompress the file
 
 {% highlight bash %}
